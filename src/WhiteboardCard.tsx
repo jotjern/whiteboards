@@ -43,7 +43,7 @@ export function WhiteboardCard({ board, onClick }: Props) {
       >
         <img
           className="wb-img"
-          src={`/images/whiteboards_small/${board.file}`}
+          src={`images/whiteboards_small/${board.file}`}
           alt={`Whiteboard ${board.roomId}`}
           loading="lazy"
           style={{
