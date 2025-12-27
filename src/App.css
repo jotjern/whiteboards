@@ -1,0 +1,169 @@
+/* ── Page ─────────────────────────────────────────────────────────────────── */
+.page {
+  min-height: 100vh;
+  padding: 0.5rem 1rem 1rem;
+}
+
+/* ── Gallery Header ───────────────────────────────────────────────────────── */
+.gallery-header {
+  text-align: center;
+  padding: 2rem 1rem 1.5rem;
+}
+
+.gallery-title {
+  font-family: 'Bodoni Moda', serif;
+  font-size: 3rem;
+  font-weight: 500;
+  color: #fff;
+  margin: 0;
+  letter-spacing: 0.05em;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.gallery-subtitle {
+  font-family: 'Bodoni Moda', serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: #b8860b;
+  margin: 0.5rem 0 0;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+/* ── Floor Section ────────────────────────────────────────────────────────── */
+.floor {
+  margin-bottom: 0.5rem;
+}
+
+/* ── Horizontal Scroll Row ────────────────────────────────────────────────── */
+.scroller-wrap {
+  overflow-x: auto;
+  overflow-y: visible;
+  margin-left: -1rem;
+  margin-right: -1rem;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.scroller-wrap::-webkit-scrollbar {
+  display: none;
+}
+
+.scroller {
+  display: inline-flex;
+  gap: 1.5rem;
+  padding: 0 1rem;
+}
+
+/* ── Card ─────────────────────────────────────────────────────────────────── */
+.wb-card {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.wb-label-wrap {
+  padding: 0.25rem 1rem 0.5rem;
+  margin-top: 0.75rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.wb-label {
+  font-family: 'Bodoni Moda', serif;
+  font-size: 2rem;
+  font-weight: 500;
+  color: #b8860b;
+  padding: 0.4rem 1.25rem;
+  border-radius: 999px;
+  text-align: center;
+  display: inline-block;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.4), 0 2px 4px rgba(0,0,0,0.3);
+  text-shadow:
+    -1px -1px 0 #1a1210,
+    1px -1px 0 #1a1210,
+    -1px 1px 0 #1a1210,
+    1px 1px 0 #1a1210;
+}
+
+.wb-viewport {
+  position: relative;
+  overflow: visible;
+}
+
+.wb-img {
+  display: block;
+}
+
+/* ── State messages ───────────────────────────────────────────────────────── */
+.state {
+  padding: 2rem;
+  text-align: center;
+  color: #666;
+}
+
+.state-error {
+  color: #c00;
+}
+
+/* ── Lightbox ─────────────────────────────────────────────────────────────── */
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  overflow: visible;
+}
+
+.lightbox-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+}
+
+.lightbox-title {
+  font-family: 'Bodoni Moda', serif;
+  font-size: 1.5rem;
+  color: #b8860b;
+}
+
+.lightbox-controls {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.lightbox-controls button {
+  background: #3d2b1f;
+  border: none;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.lightbox-controls button:hover {
+  background: #5c4033;
+}
+
+.lightbox-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+}
+
+.lightbox-content img {
+  max-width: 90vw;
+  max-height: 85vh;
+  object-fit: contain;
+  user-select: none;
+  transition: transform 0.1s ease-out;
+}
