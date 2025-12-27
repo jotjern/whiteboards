@@ -94,6 +94,17 @@
   overflow: visible;
 }
 
+.wb-viewport::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 40%, transparent 100%);
+  pointer-events: none;
+}
+
 .wb-img {
   display: block;
 }
