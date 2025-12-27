@@ -15,8 +15,8 @@ function App() {
     let cancelled = false
     ;(async () => {
       try {
-        const res = await fetch('/whiteboards.json', { cache: 'no-store' })
-        if (!res.ok) throw new Error(`Failed to load /whiteboards.json (${res.status})`)
+        const res = await fetch('whiteboards.json', { cache: 'no-store' })
+        if (!res.ok) throw new Error(`Failed to load whiteboards.json (${res.status})`)
         const json = (await res.json()) as WhiteboardsJson
         if (cancelled) return
         setData(json)
