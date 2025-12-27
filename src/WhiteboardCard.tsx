@@ -3,6 +3,9 @@ import type { Whiteboard } from './types'
 const TARGET_WIDTH = 280
 const TARGET_HEIGHT = 360
 
+// Small images are scaled to 1/3 of original size
+const SMALL_SCALE = 1 / 3
+
 type Props = {
   board: Whiteboard
   onClick?: () => void
@@ -11,14 +14,19 @@ type Props = {
 export function WhiteboardCard({ board, onClick }: Props) {
   const { tl, tr, bl } = board.corners
 
-  const srcW = tr[0] - tl[0]
-  const srcH = bl[1] - tl[1]
+  // Adjust corner coordinates for the smaller image
+  const adjTl = [tl[0] * SMALL_SCALE, tl[1] * SMALL_SCALE] as const
+  const adjTr = [tr[0] * SMALL_SCALE, tr[1] * SMALL_SCALE] as const
+  const adjBl = [bl[0] * SMALL_SCALE, bl[1] * SMALL_SCALE] as const
+
+  const srcW = adjTr[0] - adjTl[0]
+  const srcH = adjBl[1] - adjTl[1]
 
   const scaleX = srcW > 0 ? TARGET_WIDTH / srcW : 1
   const scaleY = srcH > 0 ? TARGET_HEIGHT / srcH : 1
 
-  const translateX = -tl[0] * scaleX
-  const translateY = -tl[1] * scaleY
+  const translateX = -adjTl[0] * scaleX
+  const translateY = -adjTl[1] * scaleY
 
   return (
     <div
@@ -35,7 +43,7 @@ export function WhiteboardCard({ board, onClick }: Props) {
       >
         <img
           className="wb-img"
-          src={`/images/whiteboards/${board.file}`}
+          src={`/images/whiteboards_small/${board.file}`}
           alt={`Whiteboard ${board.roomId}`}
           loading="lazy"
           style={{

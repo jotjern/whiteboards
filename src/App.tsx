@@ -88,7 +88,7 @@ function App() {
       ))}
       {selectedBoard && (
         <Lightbox
-          src={`/whiteboards/${selectedBoard.file}`}
+          src={`/images/whiteboards/${selectedBoard.file}`}
           roomId={selectedBoard.roomId}
           onClose={() => setSelectedBoard(null)}
         />
